@@ -32,7 +32,7 @@ hfTree<T>::hfTree(const int *w,int size)
 {
     const int MAX_INT = 100000;
     int min1,min2;
-    int x,y;//最小树次小树下标
+    int x,y;
 
     length = 2*size;
     elem = new Node[length];
@@ -44,7 +44,7 @@ hfTree<T>::hfTree(const int *w,int size)
         elem[i].parent = elem[i].left = elem[i].right = 0;
     }
 
-    for(int i = size- 1;i > 0;--i)//注意加减
+    for(int i = size- 1;i > 0;--i)
     {
         min1 = min2 = MAX_INT;
         x = y = 0;
