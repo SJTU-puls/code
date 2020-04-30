@@ -1,5 +1,4 @@
-#include <iostream>
-#include <cstring>
+#include <iostream> 
 #define MAX_SIZE 100010
 using namespace std;
 
@@ -20,7 +19,6 @@ public:
     struct hfCode{
         int value;
 		T data;
-        string code;
     };
     hfTree(const int *w,int size);
     void getCode(hfCode result[]);
@@ -79,21 +77,15 @@ template<class T>
 void hfTree<T>::getCode(hfCode result[])
 {
     int size = length/2;
-    int p,s;
+    int p;
 
     for(int i = size;i < length;++i)
     {
         result[i-size].data = elem[i].data;
-        result[i-size].code = "";
         p = elem[i].parent;
-        s = i;
         while(p)
         {
-//            if(elem[p].left == s)
-//                result[i-size].code = '0' + result[i-size].code;
-//            else result[i-size].code = '1' + result[i - size].code;
 			result[i-size].value++;
-            s = p;
             p = elem[p].parent;
         }
     }
